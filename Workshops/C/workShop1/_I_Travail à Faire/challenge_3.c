@@ -22,4 +22,6 @@ int main() {
             printf( "La division       : %d / %d = %.2f\n"
                     "Le modulo         : %d %% %d = %.2f", a, b, (float)a/b, a, b, a%b);
         }
+
+        return 0;
 }

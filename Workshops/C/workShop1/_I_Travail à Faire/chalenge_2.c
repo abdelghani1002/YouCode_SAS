@@ -20,4 +20,6 @@ int main(){
     }else {
         printf("Tres chaud");
     }
+    
+    return 0;
 }
