@@ -13,4 +13,6 @@ int main() {
     }else{
         printf("%d est impair", nombre);
     }
+
+    return 0;
 }
