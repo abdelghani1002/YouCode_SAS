@@ -10,6 +10,8 @@ int main() {
         printf("\nSaisir b : ");
         scanf("%d", &b);
 
+        printf("%d + %d = %d", a, b, a+b);
+
         // L'affichage des resultats des operations
         printf( "La somme          : %d + %d = %.2f\n"
                 "La substraction   : %d - %d = %.2f\n"
