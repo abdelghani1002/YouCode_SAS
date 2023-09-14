@@ -4,54 +4,34 @@ void draw(int size);
 
 int main(){
     int size;
-    while (1) {
-        // la saision de taille
-        printf("\nTaper 0 for quit.\nEnter size of the TAZRBIYT : ");
+    while(1){
+        printf( "\n --- Taper 0 pour quiter \n"
+                "Saisir la taile de TAZRBIYT : ");
         scanf("%d", &size);
-
-        // 0 pour quiter 
-        if(size == 0) break;
-
-        // draw une Tazrbiyt avec la taille saisie 
+        if (size==0) break;
         draw(size);
     }
 }
 
 
-
 void draw(int size){
     int i, j;
-    // Si la taille est pair, en la incrementé avec 1 pour parfait resultat
-    if(size % 2 == 0) {
-        size++;
-    }
 
-    // Travailler en matrice de deux dimentions 
-    // i pour les lignes && j pour les colones
-    for(i = 1; i <= size; i++){
+    if(size % 2 == 0) size++;
+
+    for(i=1; i<=size; i++){
         printf("\n");
-        for(j = 1; j <= size; j++){
-            // cadre 
-            
-            if(i == 1 || j == 1 || i == size || j == size){
+        for(j=1; j<=size; j++){
+            if(i==1 || i==size || j==1 || j==size){
                 printf("*");
-            // centre de matrice
-            
-            }else if(i == (int) size / 2 + 1 && j == (int) size / 2 + 1){
+            }else if(i==(int)size/2+1 &&  j==(int)size/2+1){
                 printf("O");
-            // ligne de mellieur 
-            
-            }else if(i == (int) size / 2 + 1 ){
-                printf("-");
-            // les diagonales
-            
-            }else if(i + j == size + 1 || i == j){
-                printf("+");
-            // colone de milieur
-            
-            }else if(j == (int) size / 2 + 1 ){
+            }else if(j==(int)size/2+1){
                 printf("|");
-            // le reste de matrice avec espace
+            }else if(i==j || i+j==size+1 || i+j==(int)(size/2)+2 || (int)(size/2)+j==i || (int)(size/2)+i==j || ){
+                printf("+");
+            }else if(i==(int)size/2+1 || (j>i && i+j<=size) || (i>j) && (i+j>size) ){
+                printf("-");
             }else{
                 printf(" ");
             }
