@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "challenge_5.C": "cpp",
-        "challenge_6": "c"
+        "challenge_6": "c",
+        "challenge_11.C": "cpp"
     }
 }
