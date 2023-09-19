@@ -8,23 +8,38 @@
 #include<string.h>
 
 // Structures
+struct victim{
+    int id;
+    char name[20];
+    char email[20];
+    int age;
+};
 
 // Functions declaration.
 char getChoise();
+void getVictims(struct victim victims[]);
 
-// Variables
-int quite = 0;
+// Global variables
+struct victim myVictims[200] = {                 // data for testing
+        {1, "victim1", "victim1@gmail.com", 21},
+        {2, "victim2", "victim2@gmail.com", 22},
+        {3, "victim3", "victim3@gmail.com", 23},
+        {4, "victim4", "victim4@gmail.com", 24}
+};
+
+int victimsNumber = sizeof(myVictims)/sizeof(myVictims[0]);
 
 // main
 int main(){
-    int choise = 1;
+    int quite = 0, choise = 1;
     while(choise != 0){
         choise = getChoise();
+        printf("\n --> id : %d, name : %s, email : %s, age : %d", myVictims[50].id, myVictims[50].name, myVictims[50].email, myVictims[50].age);
 
-        switch (choise)
-        {
+        switch (choise){
         case 1:
             // Read
+            getVictims(myVictims);
             break;
         case 2:
             // Create
@@ -52,6 +67,17 @@ int main(){
 }
 
 // Functions definition 
+
+void getVictims(struct victim victims[]){
+    for(int i = 0; i < victimsNumber; i++){
+        printf( "\n\t Victim N\'%d :\n"
+                "\t\t id    : %d \n"
+                "\t\t name  : %s \n"
+                "\t\t email : %s \n"
+                "\t\t age   : %d \n"
+        );
+    }
+}
 
 char getChoise(){
     char input[20];
